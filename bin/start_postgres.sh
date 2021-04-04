@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -e -o pipefail
 which psql > /dev/null || (echo "Please ensure that postgres client is in your PATH" && exit 1)
 
 mkdir -p $HOME/docker/volumes/postgres
