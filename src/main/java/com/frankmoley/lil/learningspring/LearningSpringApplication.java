@@ -1,6 +1,10 @@
 package com.frankmoley.lil.learningspring;
 
+import com.frankmoley.lil.learningspring.data.entity.Guest;
+import com.frankmoley.lil.learningspring.data.entity.Reservation;
 import com.frankmoley.lil.learningspring.data.entity.Room;
+import com.frankmoley.lil.learningspring.data.repository.GuestRepository;
+import com.frankmoley.lil.learningspring.data.repository.ReservationRepository;
 import com.frankmoley.lil.learningspring.data.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -28,4 +32,33 @@ public class LearningSpringApplication {
             return this.roomRepository.findAll();
         }
     }
+
+
+
+    @RestController
+    @RequestMapping("/guest")
+    public class GuestController{
+
+        @Autowired
+        private GuestRepository guestRepository;
+
+        @GetMapping
+        public Iterable<Guest> getGuest(){
+            return this.guestRepository.findAll();
+
+        }
+    }
+
+    @RestController
+    @RequestMapping("/reservation")
+    public class ReservationController{
+
+        @Autowired
+        private ReservationRepository reservationRepository;
+
+        @GetMapping
+        public Iterable<Reservation> getReservations(){ return this.reservationRepository.findAll();
+        }
+    }
+
 }

@@ -19,6 +19,10 @@ public class Guest {
     @Column(name = "EMAIL_ADDRESS")
     private String emailAddress;
 
+    @Column(name = "ADDRESS")
+    private String address;
+
+
     @Column(name = "COUNTRY")
     private String country;
 
@@ -83,4 +87,13 @@ public class Guest {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
 }
