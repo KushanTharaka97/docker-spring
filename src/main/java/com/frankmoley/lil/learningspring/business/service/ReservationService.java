@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class ReservationService {
+public class
+ReservationService {
 
     //import the Crud Extended repositories for the @Entities
     private final RoomRepository roomRepository;
